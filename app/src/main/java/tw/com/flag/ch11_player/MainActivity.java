@@ -8,13 +8,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -76,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
         }
     }
 
-    protected void onPick(View v) {
+    public void onPick(View v) {
         Intent it = new Intent(Intent.ACTION_GET_CONTENT);
         if (v.getId() == R.id.btnPickAudio) {
             it.setType("audio/*");
@@ -164,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
         }
     }
 
-    public void onMpInfo() {
+    public void onMpInfo(View v) {
         if (!btnPlay.isEnabled()) return;
 
         int len = mper.getDuration();
